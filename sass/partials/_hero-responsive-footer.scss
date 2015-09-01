@@ -1,0 +1,111 @@
+.hero-responsive-footer {
+    background:$secondary-black;
+    color:  $primary-gray;
+    font-family: $museo-light;
+    padding: 4rem 0 3rem;
+    text-align: center;
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            list-style-type: none;
+        }
+    }
+    .container {
+        max-width: 97rem;
+        width: 100%;
+    }
+    a {
+        color:  $primary-gray;
+        &:hover {
+            color: #a85852;
+            text-decoration: none;
+        }
+    }
+    .footer-links {
+        margin-bottom: 4rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        h4 {
+            color: #dfdfdf;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+        }
+        ul li {
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+        }
+    }
+    .terms-links {
+        font-size: 1.2rem;
+            ul {
+                margin: 0 auto;
+                clear: both;
+                text-align: center;
+            }
+            ul li {
+                border-right: .1rem solid $primary-gray;
+                padding: 0 5px;
+                display: inline-block;
+                margin-bottom: .5rem;
+                &:nth-child(2) {
+                    border-right: none;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+        span {
+            display: block;
+            clear: both;
+        }
+    .mobile-icons-links {
+        margin: 3rem auto 2rem;
+        a {
+            margin:0 0.5rem;
+            img {
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .sign-up {
+        margin: 7.5rem auto 0;
+        padding-bottom: 1.5rem;
+        text-align: center;
+        input, #FooterNewsLetterSignupSubmit {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            padding: 0.1rem 0.9rem 0.1rem;
+            margin: 0;
+            outline: 0;
+        }
+        #FooterNewsLetterSignupSubmit {
+            text-transform: uppercase;
+            color: #dfdfdf;
+            border: 1px solid #dfdfdf;
+            background: none;
+            outline: 0;
+            width: 100%;
+            max-width: 98px;
+            height: 31px;
+        }
+    }
+    hr {
+        border-top: 1px solid #535353;
+        margin: 0 0 10px 0;
+    }
+    @media(min-width: 768px){
+        text-align: left;
+        .sign-up input {
+            width: 236px;
+        }
+        .mobile-icons-links {
+            margin: 0;
+        }
+    }
+    @media(min-width: 992px) {
+
+    }
+}
