@@ -143,6 +143,7 @@ button[type="submit"], .state-button {
         -ms-flex-flow: row-wrap;
         flex-flow: row-wrap;
         overflow: hidden;
+        -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
         justify-content: space-between; } }
@@ -154,18 +155,12 @@ button[type="submit"], .state-button {
       max-width: 330px;
       width: 94%;
       margin: 0 auto 20px;
-      -webkit-flex: 0 0 28%;
-      -ms-flex: 0 0 28%;
       flex: 0 0 28%; }
       @media (min-width: 768px) {
         .hero-news-module .ra-flexbox .story-holder {
-          -webkit-flex: 0 0 48%;
-          -ms-flex: 0 0 48%;
           flex: 0 0 48%; } }
       @media (min-width: 992px) {
         .hero-news-module .ra-flexbox .story-holder {
-          -webkit-flex: 0 0 28%;
-          -ms-flex: 0 0 28%;
           flex: 0 0 28%; } }
       .hero-news-module .ra-flexbox .story-holder h3, .hero-news-module .ra-flexbox .story-holder h4, .hero-news-module .ra-flexbox .story-holder p, .hero-news-module .ra-flexbox .story-holder a {
         padding: 0 20px 0; }
@@ -235,9 +230,11 @@ button[type="submit"], .state-button {
         opacity: 1; }
       .hero-news-module .ra-flexbox .story-holder.ng-enter-stagger {
         /* this will have a 100ms delay between each successive enter animation */
+        -webkit-transition-delay: 0.2s;
         transition-delay: 0.2s;
         /* in case the stagger doesn't work then these two values
            must be set to 0 to avoid an accidental CSS inheritance */
+        -webkit-transition-duration: 0s;
         transition-duration: 0s; }
     .hero-news-module .ra-flexbox .swipe {
       position: absolute;
@@ -289,6 +286,7 @@ button[type="submit"], .state-button {
   -webkit-animation: load4 1.3s infinite linear;
   animation: load4 1.3s infinite linear;
   -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
   transform: translateZ(0); }
 
 @-webkit-keyframes load4 {

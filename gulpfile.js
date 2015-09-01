@@ -14,7 +14,8 @@ gulp.task('sass', function() {
     .on('error', function (err) {
       console.error('Error!', err.message);
    })
-    .pipe(gulp.dest('css/'));
+    .pipe(gulp.dest('css/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('css', function() {
@@ -35,7 +36,8 @@ gulp.task('js', function(){
     .pipe(ngAnnotate())
     .pipe(concat('all-hero4-angular.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets'));
+    .pipe(gulp.dest('assets'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('webserver', function() {
@@ -48,19 +50,19 @@ gulp.task('webserver', function() {
     }));
 });
 
-// Static server
-gulp.task('browser-sync', function() {
-    browserSync.init({
+
+gulp.task('serve', ['js', 'sass', 'css'], function(){
+  browserSync.init({
         server: {
             baseDir: "./"
         }
     });
-});
 
-gulp.task('watch', function(){
   gulp.watch('js/**/*.js', ['js']);
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('css/*.css', ['css']);
-});
+  gulp.watch("index.html").on('change', browserSync.reload);
+})
 
-gulp.task('default', ['js', 'sass', 'webserver', 'watch', 'css']);
+
+gulp.task('default', ['js', 'sass', 'serve', 'css']);
