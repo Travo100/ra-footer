@@ -19,84 +19,86 @@
 </head>
 
 <body ng-app="heroProgramApp">
-    <footer class="hero-responsive-footer">
+    <footer class="hero-responsive-footer" ng-controller="footerController as footerCtrl">
         <div class="container">
-            <div class="row footer-row">
-                    <div class="footer-links col-sm-3">
-                      <h4>Site Navigation</h4>
-                      <ul>
-                          <li><a href="#">How It Works</a></li>
-                          <li><a href="#">Energy &amp; Water Projects</a></li>
-                          <li><a href="#">Participating Communities</a></li>
-                          <li><a href="#">Find a Contractor</a></li>
-                          <li><a href="#">HERO Communities</a></li>
-                      </ul>
-                    </div>
-                    <div class="footer-links col-sm-3">
-                      <h4>Contact HERO</h4>
-                      <ul>
-                          <li><a href="tel:855-437-6411">P: 855-437-6411</a></li>
-                          <li><a href="tel:858-815-6860">F: 858-815-6860</a></li>
-                          <li><a href="mailto: info@heroprogram.com">info@heroprogram.com</a></li>
-                      </ul>
-                      <h4>Office Location</h4>
-                      <ul>
-                          <li>15073 Avenue of Science</li>
-                          <li>San Diego CA 92128</li>
-                      </ul>
-                    </div>
-                    <div class="footer-links col-sm-3">
-                      <h4>Hours of Operation</h4>
-                      <ul>
-                          <li>M-Th: 8am-10pm</li>
-                          <li>Fri: 8am-9pm</li>
-                          <li>Sat: 10am-8pm</li>
-                          <li>Sun: 10am-6pm</li>
-                      </ul>
-                    </div>
-                    <div class="footer-links col-sm-3">
-                      <h4>Learn More</h4>
-                      <ul>
-                          <li><a href="/contractors" target="">For Contractors</a></li>
-                          <li><a href="/municipalities" target="">For Municipalities</a></li>
-                          <li><a href="/commercial" target="">For Real Estate Agnents</a></li>
-                          <li><a href="/communities" target="">News</a></li>
-                          <li><a href="/communities" target="">FAQs</a></li>
-                      </ul>
-                    </div>
-                </div>
-                <div class="row footer-row">
-                  <div class="sign-up col-sm-push-6 col-sm-6">
-                      <form id="FooterNewsLetterSignUpHolder" novalidate>
-                          <div id="FooterNewsLetterSignupInputHolder">
-                              <input type="hidden" name="00NE0000004HnWt" value="HERO Interest list" />
-                              <input id="00NE0000000ahbI" maxlength="255" name="00NE0000000ahbI" size="20" type="hidden" />
-                          </div>
-                          <input class="email" name="email" type="email" placeholder="email address" />
-                          <button id="FooterNewsLetterSignupSubmit">Sign Up</button>
-                      </form>
+          <div class="row footer-row">
+                  <div class="footer-links col-sm-3">
+                    <h4>HERO Program</h4>
+                    <ul>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Energy &amp; Water Projects</a></li>
+                        <li><a href="#">Participating Communities</a></li>
+                        <li><a href="#">Find a Contractor</a></li>
+                        <li><a href="#">HERO Communities</a></li>
+                    </ul>
                   </div>
+                  <div class="footer-links col-sm-3">
+                    <h4>Contact HERO</h4>
+                    <ul>
+                        <li><a href="tel:855-437-6411">P: 855-437-6411</a></li>
+                        <li><a href="tel:858-815-6860">F: 858-815-6860</a></li>
+                        <li><a href="mailto: info@heroprogram.com">info@heroprogram.com</a></li>
+                    </ul>
+                    <h4>Office Location</h4>
+                    <ul>
+                        <li>15073 Avenue of Science</li>
+                        <li>San Diego CA 92128</li>
+                    </ul>
+                  </div>
+                  <div class="footer-links col-sm-3">
+                    <h4>Hours of Operation</h4>
+                    <ul>
+                        <li>M-Th: 8am-10pm</li>
+                        <li>Fri: 8am-9pm</li>
+                        <li>Sat: 10am-8pm</li>
+                        <li>Sun: 10am-6pm</li>
+                    </ul>
+                  </div>
+                  <div class="footer-links col-sm-3">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="/contractors" target="">For Contractors</a></li>
+                        <li><a href="/municipalities" target="">For Municipalities</a></li>
+                        <li><a href="/commercial" target="">For Real Estate Agnents</a></li>
+                        <li><a href="/communities" target="">News</a></li>
+                        <li><a href="/communities" target="">FAQs</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <div class="row footer-row">
+                <div class="sign-up col-sm-12">
+                    <form id="footerSignUp" name="footerSignUp" ng-submit="footerCtrl.sendLeadForm(footerSignUp.$valid)" novalidate>                        
+                        <div class="form-group">
+                          <label for="footer-email-signup">Sign up for updates:</label>
+                          <input class="footer-email-signup" name="footer-email-signup" type="email" id="footer-email-signup" placeholder="email address" ng-model="footerCtrl.emailLead" ng-disabled="footerCtrl.disableButton" ng-pattern="/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/" required />
+                          <button id="FooterNewsLetterSignupSubmit" ng-bind="footerCtrl.leadButton" ng-disabled="footerCtrl.disableButton" ng-class="{ 'disabled-button' : footerCtrl.disableButton};">Sign Up</button>
+                          <span ng-bind="footerCtrl.errorMessage" ng-if="!footerSignUp.$valid"></span>
+                        </div>
+                        
+                    </form>
                 </div>
+              </div>
+            </div> <!-- end of container -->
             <hr />
-            <div class="row footer-row">
-                <div class="terms-links">
-                    <div class="mobile-icons-links col-sm-4">
-                      <a href="https://www.facebook.com/HEROFinancing" target="_blank"><img src="img/footer-facebook-icon.png" /></a>
-                      <a href="https://twitter.com/HEROProgram" target="_blank"><img src="img/footer-twitter-icon.png" /></a>
-                      <a href="#"><img src="img/footer-youtube-icon.png" /></a>
-                      <a href="#"><img src="img/footer-instagram-icon.png" /></a>
-                    </div>
-                    <div class="col-sm-8">
-                      <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms &amp; Conditions</a></li>
-                        <li>Copyright &#169; 2015 Renovate America Inc. All Rights Reserved</li>
-                      </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of container -->
+            <div class="container">
+              <div class="row footer-row">
+                  <div class="terms-links">
+                      <div class="mobile-icons-links col-sm-4">
+                        <a href="https://www.facebook.com/HEROFinancing" target="_blank" title="Facebook"><img src="img/footer-facebook-icon.png" /></a>
+                        <a href="https://twitter.com/HEROProgram" target="_blank" title="Twitter"><img src="img/footer-twitter-icon.png" /></a>
+                        <a href="#" title="YouTube"><img src="img/footer-youtube-icon.png" /></a>
+                        <a href="#" title="Instagram"><img src="img/footer-instagram-icon.png" /></a>
+                      </div>
+                      <div class="col-sm-8">
+                        <ul>
+                          <li><a href="/privacy-policy">Privacy Policy</a></li>
+                          <li><a href="/terms">Terms &amp; Conditions</a></li>
+                        </ul>
+                        <span>Copyright &#169; 2015 Renovate America Inc. All Rights Reserved</span>
+                      </div>
+                  </div>
+              </div>
+            </div> <!-- end of container -->
     </footer>
 </body>
 <!-- scripts -->

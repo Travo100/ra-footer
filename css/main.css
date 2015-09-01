@@ -338,9 +338,6 @@ button[type="submit"], .state-button {
     margin: 0; }
     .hero-responsive-footer ul li {
       list-style-type: none; }
-  .hero-responsive-footer .container {
-    max-width: 97rem;
-    width: 100%; }
   .hero-responsive-footer a {
     color: #999; }
     .hero-responsive-footer a:hover {
@@ -354,6 +351,8 @@ button[type="submit"], .state-button {
       color: #dfdfdf;
       font-size: 1.6rem;
       line-height: 2.5rem; }
+      .hero-responsive-footer .footer-links h4:nth-child(2) {
+        margin-top: 4rem; }
     .hero-responsive-footer .footer-links ul li {
       font-size: 1.4rem;
       line-height: 3.2rem; }
@@ -362,15 +361,14 @@ button[type="submit"], .state-button {
     .hero-responsive-footer .terms-links ul {
       margin: 0 auto;
       clear: both;
-      text-align: center; }
+      text-align: center;
+      width: 20.3rem; }
     .hero-responsive-footer .terms-links ul li {
       border-right: 0.1rem solid #999;
       padding: 0 5px;
-      display: inline-block;
+      float: left;
       margin-bottom: .5rem; }
-      .hero-responsive-footer .terms-links ul li:nth-child(2) {
-        border-right: none; }
-      .hero-responsive-footer .terms-links ul li:last-child {
+      .hero-responsive-footer .terms-links ul li:nth-child(2), .hero-responsive-footer .terms-links ul li:last-child {
         border-right: none; }
   .hero-responsive-footer span {
     display: block;
@@ -385,7 +383,12 @@ button[type="submit"], .state-button {
     margin: 7.5rem auto 0;
     padding-bottom: 1.5rem;
     text-align: center; }
-    .hero-responsive-footer .sign-up input, .hero-responsive-footer .sign-up #FooterNewsLetterSignupSubmit {
+    .hero-responsive-footer .sign-up label {
+      font-size: 1.4rem;
+      line-height: 3.2rem;
+      font-weight: normal;
+      display: block; }
+    .hero-responsive-footer .sign-up input[type="email"], .hero-responsive-footer .sign-up #FooterNewsLetterSignupSubmit {
       font-size: 1.4rem;
       line-height: 2.5rem;
       padding: 0.1rem 0.9rem 0.1rem;
@@ -400,13 +403,46 @@ button[type="submit"], .state-button {
       width: 100%;
       max-width: 98px;
       height: 31px; }
+      .hero-responsive-footer .sign-up #FooterNewsLetterSignupSubmit:hover {
+        color: #a85852;
+        border-color: #a85852; }
+      .hero-responsive-footer .sign-up #FooterNewsLetterSignupSubmit.disabled-button {
+        cursor: not-allowed; }
+      .hero-responsive-footer .sign-up #FooterNewsLetterSignupSubmit.disabled-button:hover {
+        color: #dfdfdf;
+        border-color: #dfdfdf;
+        cursor: not-allowed; }
+    .hero-responsive-footer .sign-up .form-group span {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      font-size: 1.4rem; }
   .hero-responsive-footer hr {
     border-top: 1px solid #535353;
-    margin: 0 0 10px 0; }
+    margin: 0 auto 10px;
+    width: 94%; }
   @media (min-width: 768px) {
     .hero-responsive-footer {
       text-align: left; }
       .hero-responsive-footer .sign-up input {
         width: 236px; }
       .hero-responsive-footer .mobile-icons-links {
-        margin: 0; } }
+        margin: 0;
+        padding-left: 10px;
+        padding-right: 10px; }
+      .hero-responsive-footer hr {
+        width: 100%; }
+      .hero-responsive-footer .terms-links ul, .hero-responsive-footer span {
+        float: right; }
+      .hero-responsive-footer .terms-links ul {
+        margin: 0;
+        width: 198px; }
+        .hero-responsive-footer .terms-links ul li:last-child {
+          padding-right: 0;
+          margin-right: 0; }
+      .hero-responsive-footer .sign-up {
+        text-align: right; }
+        .hero-responsive-footer .sign-up label {
+          display: inline; }
+        .hero-responsive-footer .sign-up .form-group span {
+          right: 14.1rem; } }
