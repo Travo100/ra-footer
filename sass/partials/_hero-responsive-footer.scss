@@ -26,9 +26,9 @@
             color: #dfdfdf;
             font-size: 1.6rem;
             line-height: 2.5rem;
-            &:nth-child(2) {
-                margin-top: 4rem;
-            }
+        }
+        .office-location {
+            margin-top: 4rem;
         }
 
         ul li {
@@ -126,6 +126,9 @@
         text-align: left;
         .sign-up input {
             width: 236px;
+        }
+        .footer-links  .office-location {
+            margin-top: 1rem;
         }
         .mobile-icons-links {
             margin: 0;
