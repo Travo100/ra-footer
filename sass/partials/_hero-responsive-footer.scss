@@ -13,7 +13,7 @@
     }
     a {
         color:  $primary-gray;
-        &:hover {
+        &:hover, &:focus {
             color: #a85852;
             text-decoration: none;
         }
